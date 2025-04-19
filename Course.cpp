@@ -11,6 +11,14 @@ Course::Course(string name, float grade, char g, int id, int credit_hours, strin
     this->syllabus = syllabus;
     this->instructor_mail = instructor_mail;
 }
+Course::Course(string name,  int id, int credit_hours, string syllabus, string instructor_mail,int semester){
+    this->name = name;
+    this->id = id;
+    this->credit_hours = credit_hours;
+    this->syllabus = syllabus;
+    this->instructor_mail = instructor_mail;
+    this->semester=semester;
+}
 
     string Course::get_name() {
         return name;

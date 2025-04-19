@@ -2,7 +2,7 @@
 #include <string>
 
 #include"Course.h"
-#include"Admin.h"
+//#include"Admin.h"
 #include"Student.h"
 #include"College.h"
 using namespace std;
@@ -20,7 +20,27 @@ void log_in(int AdmOrStud);
 College *fcis = new College();
 int main()
 {
-   
+   /*
+    cout << "Admin 1 or Stud 2";
+    int c1;
+    cin >> c1;
+    cout << "signup 1 or login 2";
+    int c2;
+    cin >> c2;
+
+    if (c2 == 1) {
+        sign_up(c1);
+        log_in(c1);
+    }
+    else {
+        log_in(c2);
+    }*/
+fcis->upload_course();
+
+        fcis->display(3);
+
+
+
     return 0;
 }
 
@@ -45,38 +65,59 @@ void log_in(int AdmOrStud)
     {
         cout << "Enter username\n";
         cin >> username;
-        if (fcis->Admins.find(username) == fcis->Admins.end()) //user doesn't exist 
+        auto it = fcis->Admins.find(username);
+        if (it == fcis->Admins.end()) //user doesn't exist 
         {
             cout << "username not found \n";
             return;
+        }
+
+        else {
+            cout << "Enter password";
+            do {
+                cin >> password;
+               
+                if (it->second.get_password() == password) {
+                    cout << "Logged in Succefully\n";
+                    break;
+                }
+
+                else
+                {
+                    cout << "Password Incorrect. Please Try Again\n";
+                }
+            } while (true);
         }
     }
     else
     {
         cout << "Enter your ID\n";
         cin >> id;
-        if (fcis->Students.find(id) == fcis->Students.end()) //user doesn't exist 
+        auto it = fcis->Students.find(id);
+        if (it == fcis->Students.end()) //user doesn't exist 
         {
-            cout << "ID not found \n";
+            cout << "username not found \n";
             return;
+        }
+
+        else {
+            cout << "Enter password";
+            do {
+                cin >> password;
+
+                if (it->second.get_password() == password) {
+                    cout << "Logged in Succefully\n";
+                    break;
+                }
+
+                else
+                {
+                    cout << "Password Incorrect. Please Try Again\n";
+                }
+            } while (true);
         }
     }
 
-
-
-    //cout << "Enter password";
-    //do {
-    //    cin >> password;
-    //    if (fcis->Admins[username] == password )
-    //    {
-    //        cout << "Logged in Succefully\n";
-    //        break;
-    //    }
-    //    else
-    //    {
-    //        cout << "Password Incorrect. Please Try Again\n";
-    //    }
-    //} while (true);
 
 
 }

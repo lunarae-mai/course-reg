@@ -1,0 +1,3 @@
+C:/Users/ASUS/source/repos/lunarae-mai/course-reg/out/build/x64-Debug/CMakeFiles/Project1.dir
+C:/Users/ASUS/source/repos/lunarae-mai/course-reg/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/ASUS/source/repos/lunarae-mai/course-reg/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir

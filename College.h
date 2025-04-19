@@ -16,6 +16,8 @@ public :
 
 	void create_admin();
 	void create_stud();
+    void upload_course();
+    void display(int s);
 
 };
 

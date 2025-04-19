@@ -11,7 +11,6 @@ class Student
 public:
 	int ID;
 	string name;
-	string password;     
 	int semester;
 
 	map <int,Course> current_courses; // int (id of course )
@@ -27,7 +26,11 @@ public:
 	void course_reg();
 	void check_completed();//Antar
 	float calc_gpa();
+    void drop_course(int id);
+	string get_password();
+
 private:
 	float GPA;
+	string password;     
 };
 

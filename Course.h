@@ -25,6 +25,7 @@ private:
 public:
 	Course();
 	Course(string name, float grade, char g, int id, int credit_hours, string syllabus, string instructor_mail);
+    Course(string name,  int id, int credit_hours, string syllabus, string instructor_mail,int semester);
 	void set_name(string name);
 	void set_grade(float grade);
 	void set_G(char g);
@@ -46,6 +47,7 @@ public:
 	string get_instructor_name();
 	int get_semester();
 	bool get_completed();
+
 
 
 

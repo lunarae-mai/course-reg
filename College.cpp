@@ -1,5 +1,5 @@
 #include "College.h"
-#include "Admin.h"
+//#include "Admin.h"
 
 #include <iostream>
 #include <string>
@@ -22,12 +22,12 @@ void College::create_admin()
 	cout << "Create Your password\n";
 	cin >> password;
 
-	Admin new_admin (username, password);
+	Admin new_admin =  Admin (username, password);
 	Admins.insert({ username, new_admin });
 
 	cout << "Admin Created Succefully\n";
 	}
-	
+	 
 }
 
 void College::create_stud()
@@ -58,5 +58,33 @@ void College::create_stud()
 		cout << "Student Created Succefully\n";
 	}
 
+}
+void College::upload_course() {
+    cout<<"Set course name"<<endl;
+    string name;cin>>name;
+    cout<<"Set course id"<<endl;
+    int id;cin>>id;
+    cout<<"Set course credit hours"<<endl;
+    int credit_hours;cin>>credit_hours;
+    cout<<"Set course semester"<<endl;
+    int semester ;cin>>semester;
+    cout<<"Set course syllabus"<<endl;
+    string syllabus;cin>>syllabus;
+    cout<<"Set course instructor mail"<<endl;
+    string instructor_mail;cin>>instructor_mail;
+
+    Course new_course = Course(name,id,credit_hours,syllabus,instructor_mail,semester);
+Courses[semester].push_back(new_course);
+
+
+
+}
+void College::display(int semester){
+   /* for (int i = 0; i < 3; ++i) {*/
+        vector<Course>c =Courses[semester];
+    for (int i = 0; i < c.size(); ++i) {
+        cout<<c[i].get_id();
+    }
+ /*   cout<<Courses[semester];*/
 
 }
